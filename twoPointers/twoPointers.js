@@ -1,4 +1,5 @@
 function pointer(value) {
+  // find adding two numbers === 0
     let left = 0;
     let right = value.length-1;
   
@@ -13,6 +14,8 @@ function pointer(value) {
           left++
         }
       }
+
+      return false
     }
   }
   
