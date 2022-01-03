@@ -1,6 +1,8 @@
 // Bubble sort with no swap checker to reduce the number of sorting
 // Particularly on an array with almost sorted.
 // if array is sorted(noSwap = true), break loop (no need to check)
+// 1. beginning to the end.
+
 function bubbleSortSwap(arr) {
     for (let i = arr.length; i >= 0; i--) {
         let noSwap = true;
