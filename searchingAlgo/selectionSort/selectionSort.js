@@ -1,5 +1,7 @@
 // 1. From beginning to the end.
 // 2. it places the smallest value to sorted position.
+// time complexity = O(n^2), space complexity O(1)
+// The number of sorting is less than Bubble sort bc it only sort at the very end of each loop
 
 // pseudocode
 // - store the smallest value you've seen

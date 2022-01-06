@@ -2,6 +2,7 @@
 // Particularly on an array with almost sorted.
 // if array is sorted(noSwap = true), break loop (no need to check)
 // 1. beginning to the end.
+// O(n^2), when an arr is almost sorted O(n)
 
 function bubbleSortSwap(arr) {
     for (let i = arr.length; i >= 0; i--) {
