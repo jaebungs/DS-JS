@@ -47,3 +47,4 @@ function mergeSort(arr) {
 }
 
 console.log(mergeSort( [1, 6, 2 , 4, 19, 11, 15 ,16, 17] ));
+// nLog(n)
