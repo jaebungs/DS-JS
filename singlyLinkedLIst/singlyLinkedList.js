@@ -39,7 +39,7 @@ class SinglyLinkedList {
         return this;
     }
 
-    pop() {
+    pop() { // remove the last node
         if (!this.head) return
         let current = this.head;
         let temp = this.head;
@@ -59,12 +59,50 @@ class SinglyLinkedList {
 
         return current;
     }
+
+    shift() { // remove the beginning node
+        if (!this.head) return
+
+        this.head = this.head.next
+        this.length--;
+        if (this.length === 0) {
+            this.tail = null;
+        }
+    }
+
+    unshift(value) { // add new node to the beginning.
+        const newNode = new Node(value);
+        if (!this.head) {
+            this.head = newNode
+            this.tail = this.head;
+        } else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+    }
+
+    get(position) {
+        if (position < 0 || position > this.length) return null;
+ 
+        let node = this.head;
+        let loop = 0; 
+        while (loop !== position) {
+            node = node.next
+            loop++;
+        }
+
+        return node;
+    }
 }
 
 let linkedList = new SinglyLinkedList()
 linkedList.push("Hi")
 linkedList.push("My name is")
 linkedList.push("Sasha")
-linkedList.pop()
+// linkedList.pop()
+// linkedList.shift()
+// linkedList.unshift('Hey!!')
 
-console.log(linkedList)
+// console.log(linkedList)
+console.log(linkedList.get(2)) //"My name is")
