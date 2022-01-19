@@ -94,8 +94,63 @@ class SinglyLinkedList {
 
         return node;
     }
-}
 
+    set (index, value) {
+        const foundNode = this.get(index)
+        
+        if (!foundNode) return undefined
+        foundNode.val = value;
+    }
+
+    insert(index, value) {
+        if (index < 0 || index > this.length) return false
+        if (index === this.length) return !!this.push(value);
+        if (index === 0) return !!this.unshift(value);
+
+        const prevNode = this.get(index - 1);
+        const newNode = new Node(value);
+        const temp = prevNode.next;
+
+        prevNode.next = newNode;
+        newNode.next = temp;
+        this.length++;
+
+        return true;
+    }
+
+    remove(index) {
+        if (index < 0 || index > this.length) return false
+        if (index === 0) return !!this.shift()
+        if (index === this.length) return !!this.pop()
+
+        const prevNode = this.get(index - 1)
+        const nextNode = prevNode.next
+
+        prevNode.next = nextNode.next
+        return nextNode
+    }
+
+    reverse() {
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+
+        let next;
+        let prev = null;
+
+        for (let i = 0; i < this.length; i++) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next
+        }
+//      [100, 200, 300, 400]
+//       node next
+//  prev      
+//       prev node
+//                 next
+    }
+}
 let linkedList = new SinglyLinkedList()
 linkedList.push("Hi")
 linkedList.push("My name is")
@@ -105,4 +160,9 @@ linkedList.push("Sasha")
 // linkedList.unshift('Hey!!')
 
 // console.log(linkedList)
-console.log(linkedList.get(2)) //"My name is")
+// console.log(linkedList.get(2)) //"My name is")
+// linkedList.set(2, "UUUAAHHH")
+// linkedList.insert(3, 'wer')
+// linkedList.remove(1)
+linkedList.reverse()
+console.log(linkedList)
