@@ -5,7 +5,7 @@
     Small values should go to the left. Bigger values should go to the right.
 
     1. Compare the first one and others by looping.
-    2. Move the smaller number to the right side of the pivot, increase index
+    2. Move the smaller number to the next index of the pivot, increase the marking index
     [5 ,3(moved), 2(moved), 7 ,8]
     3. Swap the position between the pivot with the last moved value
     [2, 3 ,5 , 7, 8]
@@ -59,3 +59,5 @@ function quickSort(arr, left = 0, right = arr.length) {
 // console.log(quickSortHelper([8, 2, 19, 25, 4])) 
 console.log(quickSort([8, 2, 19, 25, 4])) 
 console.log(quickSort([11, 2, 4, 9, 13, 52, 33, 10])) 
+
+[52, 2, 4, 9, 10, 11, 33, 13]
